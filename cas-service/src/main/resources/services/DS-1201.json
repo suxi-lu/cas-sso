@@ -1,0 +1,15 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^(https|imaps|http)://cas.client.org:18443.*",
+  "name" : "电商",
+  "theme" : "apereo",
+  "id" : 1201,
+  "description" : "电商平台后台管理登陆系统",
+  "evaluationOrder" : 1201,
+  "logoutType" : "BACK_CHANNEL",
+  "logoutUrl" : "http://cas.client.org:18443/logout",
+  "attributeReleasePolicy" : {
+    "@class" : "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
+    "allowedAttributes" : [ "java.util.ArrayList", [ "phone", "email" ] ]
+  }
+}

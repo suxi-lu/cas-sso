@@ -1,0 +1,246 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <groupId>com.hnds.cas</groupId>
+    <artifactId>cas-service</artifactId>
+	<!--<packaging>jar</packaging>-->
+	<packaging>war</packaging>
+	<name>cas-service</name>
+	<version>0.1</version>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<app.server>-tomcat</app.server>
+		<cas.version>5.3.3</cas.version>
+		<springboot.version>1.5.14.RELEASE</springboot.version>
+
+		<mainClassName>org.springframework.boot.loader.WarLauncher</mainClassName>
+		<isExecutable>false</isExecutable>
+		<manifestFileToUse>${project.build.directory}/war/work/org.apereo.cas/cas-server-webapp${app.server}/META-INF/MANIFEST.MF</manifestFileToUse>
+
+		<druid.version>1.1.9</druid.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apereo.cas</groupId>
+				<artifactId>cas-server-support-bom</artifactId>
+				<version>${cas.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>8.5.32</version>
+		</dependency>
+
+		<!--服务注册-->
+		<!--<dependency>-->
+		<!--<groupId>org.apereo.cas</groupId>-->
+		<!--<artifactId>cas-server-support-json-service-registry</artifactId>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-webapp${app.server}</artifactId>
+			<type>war</type>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!--<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-couchbase-authentication</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-consent-webflow</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-consent-jdbc</artifactId>
+			<version>${cas.version}</version>
+		</dependency>-->
+
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-documentation-swagger</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-core-logout-api</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>org.apereo.cas</groupId>-->
+			<!--<artifactId>cas-server-support-pm-rest</artifactId>-->
+			<!--<version>${cas.version}</version>-->
+		<!--</dependency>-->
+
+		<!-- Redis Service Registry -->
+		<!--<dependency>-->
+			<!--<groupId>org.apereo.cas</groupId>-->
+			<!--<artifactId>cas-server-support-redis-service-registry</artifactId>-->
+			<!--<version>${cas.version}</version>-->
+		<!--</dependency>-->
+
+		<!--<dependency>-->
+			<!--<groupId>org.apereo.cas</groupId>-->
+			<!--<artifactId>cas-server-support-json-service-registry</artifactId>-->
+			<!--<version>${cas.version}</version>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-rest</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+
+		<!-- Redis Ticket Registry -->
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-redis-ticket-registry</artifactId>
+			<version>${cas.version}</version>
+		</dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>org.apereo.cas</groupId>-->
+			<!--<artifactId>cas-server-support-token-tickets</artifactId>-->
+			<!--<version>${cas.version}</version>-->
+		<!--</dependency>-->
+
+		<!-- Password Management -->
+		<!--<dependency>-->
+			<!--<groupId>org.apereo.cas</groupId>-->
+			<!--<artifactId>cas-server-support-pm-jdbc</artifactId>-->
+			<!--<version>${cas.version}</version>-->
+		<!--</dependency>-->
+
+		<!-- Database Authentication -->
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-jdbc-drivers</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apereo.cas</groupId>
+			<artifactId>cas-server-support-jdbc</artifactId>
+		</dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>com.oracle</groupId>-->
+			<!--<artifactId>ojdbc6</artifactId>-->
+			<!--<version>11.2.0.3</version>-->
+		<!--</dependency>-->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!--<version>2.0.4.RELEASE</version>-->
+				<version>${springboot.version}</version>
+				<!--<configuration>-->
+				<!--<mainClass>org.springframework.boot.loader.WarLauncher</mainClass>-->
+				<!--<addResources>true</addResources>-->
+				<!--</configuration>-->
+				<configuration>
+					<mainClass>${mainClassName}</mainClass>
+					<addResources>true</addResources>
+					<executable>${isExecutable}</executable>
+					<layout>WAR</layout>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.rimerosolutions.maven.plugins</groupId>
+				<artifactId>wrapper-maven-plugin</artifactId>
+				<version>0.0.5</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<warName>cas</warName>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<recompressZippedFiles>false</recompressZippedFiles>
+					<archive>
+						<compress>false</compress>
+						<manifestFile>${project.build.directory}/war/work/org.apereo.cas/cas-server-webapp${app.server}/META-INF/MANIFEST.MF</manifestFile>
+					</archive>
+					<overlays>
+						<overlay>
+							<groupId>org.apereo.cas</groupId>
+							<artifactId>cas-server-webapp${app.server}</artifactId>
+						</overlay>
+					</overlays>
+					<!--<dependentWarExcludes>-->
+						<!--**/services/*.json-->
+					<!--</dependentWarExcludes>-->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+			</plugin>
+		</plugins>
+		<finalName>cas</finalName>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>sonatype-releases</id>
+			<url>http://oss.sonatype.org/content/repositories/releases/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>sonatype-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>shibboleth-releases</id>
+			<url>https://build.shibboleth.net/nexus/content/repositories/releases</url>
+		</repository>
+	</repositories>
+
+</project>

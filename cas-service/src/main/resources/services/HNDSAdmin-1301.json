@@ -1,0 +1,11 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^(https|imaps|http)://cas.example.org:18102.*",
+  "name" : "海宁电商后台管理系统test",
+  "theme" : "apereo",
+  "id" : 1301,
+  "description" : "电商平台后台管理系统登陆test",
+  "evaluationOrder" : 1301,
+  "logoutType" : "BACK_CHANNEL",
+  "logoutUrl" : "http://cas.client.org:8990/logout"
+}

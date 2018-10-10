@@ -1,2 +1,11 @@
 # cas-sso
 cas 单点登陆示例项目
+
+* 使用时请添加下面内容到hosts文件  
+windows: C:\Windows\System32\drivers\etc\hosts  
+centos: /etc/hosts  
+<pre><code>
+127.0.0.1 cas.example.org
+127.0.0.1 cas.app.org
+127.0.0.1 cas.client.org
+</code></pre>

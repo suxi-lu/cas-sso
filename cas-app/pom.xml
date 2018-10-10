@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <groupId>com.hnds.app</groupId>
+    <artifactId>cas-app</artifactId>
+	<packaging>jar</packaging>
+	<name>cas-app</name>
+	<version>0.1</version>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>com.hnds.cas</groupId>
+		<artifactId>cas</artifactId>
+		<version>0.1</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+  	<dependencies>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>font-awesome</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>ionicons</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>AdminLTE</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>jquery</artifactId>
+		</dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>org.webjars.bower</groupId>-->
+			<!--<artifactId>bootstrap</artifactId>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>fastclick</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery.sparkline</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jQuery-slimScroll</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>jquery-icheck</artifactId>
+		</dependency>
+
+		<!--<dependency>
+			<groupId>net.unicon.cas</groupId>
+			<artifactId>cas-client-config-support</artifactId>
+			<version>1.7.0-GA</version>
+		</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.hnds.client</groupId>-->
+            <!--<artifactId>cas-client-autoconfig</artifactId>-->
+            <!--<version>0.1</version>-->
+        <!--</dependency>-->
+
+		<dependency>
+			<groupId>com.hnds.client</groupId>
+			<artifactId>cas-client-support-rest-authentication</artifactId>
+			<version>0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-test</artifactId>-->
+			<!--<scope>test</scope>-->
+		<!--</dependency>-->
+
+	</dependencies>
+
+</project>

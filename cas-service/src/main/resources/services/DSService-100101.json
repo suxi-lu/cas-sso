@@ -1,0 +1,15 @@
+{
+  "@class": "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId": "^(https|imaps|http)://cas.app.org:18002.*",
+  "name": "DS Service",
+  "theme" : "apereo",
+  "id": 100101,
+  "description" : "电商单点登陆服务",
+  "evaluationOrder" : 100101,
+  "logoutType" : "BACK_CHANNEL",
+  "logoutUrl" : "http://cas.app.org:18002/logout",
+  "attributeReleasePolicy" : {
+    "@class" : "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
+    "allowedAttributes" : [ "java.util.ArrayList", [ "phone", "email" ] ]
+  }
+}

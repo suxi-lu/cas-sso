@@ -1,0 +1,199 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <groupId>com.hnds.cas</groupId>
+    <artifactId>cas</artifactId>
+	<packaging>pom</packaging>
+	<name>cas</name>
+	<version>0.1</version>
+	<url>http://maven.apache.org</url>
+
+	<modules>
+
+		<module>cas-service</module>
+		<module>cas-client-autoconfig</module>
+		<module>cas-client-support-rest-authentication</module>
+		<module>cas-client</module>
+		<module>cas-app</module>
+
+	</modules>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<compiler.plugin.version>3.2</compiler.plugin.version>
+		<lombok.version>1.18.0</lombok.version>
+		<lombok.plugin.version>1.16.22.0</lombok.plugin.version>
+
+		<cas.version>5.3.3</cas.version>
+
+		<spring.boot.version>2.0.3.RELEASE</spring.boot.version>
+
+		<junit.version>4.12</junit.version>
+
+		<!-- 其他插件 -->
+		<font-awesome.version>5.3.1</font-awesome.version>
+		<ionicons.version>2.0.1</ionicons.version>
+		<jquery.version>3.3.1</jquery.version>
+		<echarts.version>3.2.3</echarts.version>
+		<admin-lte.version>2.4.3</admin-lte.version>
+		<fastclick.version>1.0.6</fastclick.version>
+		<sparkline.version>2.1.2</sparkline.version>
+		<slimscroll.version>1.3.8</slimscroll.version>
+		<icheck.version>1.0.2</icheck.version>
+		<!-- bootstrap相关控件版本 -->
+		<bootstrap.version>4.1.3</bootstrap.version>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>2.0.4.RELEASE</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler.plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok-maven-plugin</artifactId>
+				<version>${lombok.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>delombok</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apereo.cas</groupId>
+				<artifactId>cas-server-core</artifactId>
+				<version>${cas.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apereo.cas</groupId>
+				<artifactId>cas-server-core-web</artifactId>
+				<version>${cas.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apereo.cas</groupId>
+				<artifactId>cas-server-support-configuration-cloud-jdbc</artifactId>
+				<version>${cas.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+
+
+			<!-- 其他插件 -->
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>font-awesome</artifactId>
+				<version>${font-awesome.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>ionicons</artifactId>
+				<version>${ionicons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars.bower</groupId>
+				<artifactId>jquery</artifactId>
+				<version>${jquery.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>echarts</artifactId>
+				<version>${echarts.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>AdminLTE</artifactId>
+				<version>${admin-lte.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>fastclick</artifactId>
+				<version>${fastclick.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jquery.sparkline</artifactId>
+				<version>${sparkline.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>jQuery-slimScroll</artifactId>
+				<version>${slimscroll.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars.bower</groupId>
+				<artifactId>jquery-icheck</artifactId>
+				<version>${icheck.version}</version>
+			</dependency>
+			<!-- bootstrap 相关控件 -->
+			<dependency>
+				<groupId>org.webjars.bower</groupId>
+				<artifactId>bootstrap</artifactId>
+				<version>${bootstrap.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+</project>
