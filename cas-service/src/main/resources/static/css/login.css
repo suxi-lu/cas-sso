@@ -1,0 +1,117 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	font-size: 12px;
+	font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+
+/* cas admin css */
+.alert {
+	position: relative;
+	padding: 0.75rem 1.25rem;
+	margin-bottom: 1rem;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+}
+
+.error-container {
+	width: 245px;
+	display: block;
+	margin: 24px auto 18px;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.alert-danger {
+	color: #721c24;
+	background-color: #f8d7da;
+	border-color: #f5c6cb;
+}
+
+.alert-danger hr {
+	border-top-color: #f1b0b7;
+}
+
+.alert-danger .alert-link {
+	color: #491217;
+}
+
+/* 登录界面 */
+.box {
+	width: 438px;
+	height: 478px;
+	border: 1px solid #dedede;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -240px 0px 0px -220px;
+}
+.box > img {
+	width: 228px;
+	display: block;
+	margin: 88px auto 0px;
+}
+.box input[id="username"] {
+	width: 245px;
+	color: #795548;
+	font-size: 16px;
+	background: url(../images/account.png) 7px center/30px 30px no-repeat;
+	border: 1px solid #dedede;
+	display: block;
+	padding: 10px 20px 10px 44px;
+	margin: 24px auto 18px;
+	box-sizing: border-box;
+	outline: none;
+	cursor: pointer;
+}
+.box input[id="password"] {
+	width: 245px;
+	color: #795548;
+	font-size: 16px;
+	background: url(../images/cipher.png) 7px center/30px 30px no-repeat;
+	border: 1px solid #dedede;
+	display: block;
+	padding: 10px 20px 10px 44px;
+	margin: 0px auto 30px;
+	box-sizing: border-box;
+	outline: none;
+	cursor: pointer;
+}
+.box input[name="submit"] {
+	width: 245px;
+	height: 42px;
+	color: #FFF;
+	font-size: 16px;
+	background: #469ede;
+	border: 0px;
+	display: block;
+	margin: 0px auto 40px;
+	cursor: pointer;
+}
+.box > p {
+	color: #888;
+	font-size: 12px;
+	text-align: center;
+}
+/* 语言切换 */
+.language {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+.language > a {
+	color: #333;
+	font-size: 16px;
+	line-height: 24px;
+	display: inline-block;
+	text-decoration: none;
+}
+.language > span {
+	color: #333;
+	font-size: 16px;
+	line-height: 24px;
+}
+.language > .select {
+	color: rgb(70, 158, 222);
+	font-weight: bolder;
+}
