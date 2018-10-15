@@ -62,7 +62,7 @@ class MainController {
     public @ResponseBody String login(String service) {
 
 //        String url = RestAuthUtils.getRedirectUrl(restTemplate, "linxi", "123456", service);
-        String url = RestAuthUtils.getRedirectUrl(restTemplate, "hnds", "1234", service);
+        String url = RestAuthUtils.getRedirectUrl(restTemplate, "zhong", "password", service);
 
         return url;
     }

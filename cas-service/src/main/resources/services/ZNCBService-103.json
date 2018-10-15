@@ -1,15 +1,15 @@
 {
-  "@class" : "org.apereo.cas.services.RegexRegisteredService",
-  "serviceId" : "^(https|imaps|http)://cas.client.org:18443.*",
-  "name" : "电商",
-  "theme" : "apereo",
-  "id" : 1201,
-  "description" : "电商平台后台管理登陆系统",
-  "evaluationOrder" : 1201,
-  "logoutType" : "BACK_CHANNEL",
-  "logoutUrl" : "http://cas.client.org:18443/logout",
-  "attributeReleasePolicy" : {
-    "@class" : "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
+  "@class": "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId": "^(https|imaps|http)://192.168.3.81:8080.*",
+  "name": "ZNCBLocal-z Service",
+  "theme": "apereo",
+  "id": 103,
+  "description": "智能船舶登陆服务（local-z测试服务）",
+  "evaluationOrder": 103,
+  "logoutType": "BACK_CHANNEL",
+  "logoutUrl": "http://192.168.3.81:8080/menusystem/console/user/logout.action",
+  "attributeReleasePolicy": {
+    "@class": "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
     "allowedAttributes": [ "java.util.ArrayList", [ "emp_num", "username", "ldap_name", "ldap_uid", "nick_name", "emp_dept", "emp_position", "email", "mobile", "create_time", "creator", "update_time", "update_by", "parentposition", "emp_password", "emp_type", "parent_position", "address", "company_num", "dates_employed", "departure_time", "emp_en_name", "former_name", "gender", "identity_card", "job_number", "name_pinyin", "nation", "state", "telephone", "update_type", "emp_manager", "phonenumber", "password", "registrationid", "audit_status", "company_name", "department_code", "user_type", "usersource", "emp_position_descr", "emp_position_name", "expansion_attr", "tenent_id", "mobile_user_type", "is_mobile_user" ] ]
   }
 }
