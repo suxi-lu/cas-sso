@@ -16,6 +16,9 @@
 		<module>cas-client</module>
 		<module>cas-app</module>
 
+		<module>cas-client1</module>
+		<module>cas-client2</module>
+
 	</modules>
 
 	<properties>
