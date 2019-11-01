@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
   
-    <groupId>com.hnds.cas</groupId>
+    <groupId>com.learn.cas</groupId>
     <artifactId>cas</artifactId>
 	<packaging>pom</packaging>
 	<name>cas</name>
@@ -9,31 +9,28 @@
 	<url>http://maven.apache.org</url>
 
 	<modules>
-
 		<module>cas-service</module>
-		<module>cas-client-autoconfig</module>
-		<module>cas-client-support-rest-authentication</module>
-		<module>cas-client</module>
-		<module>cas-app</module>
+
+        <module>cas-client-autoconfig</module>
 
 		<module>cas-client1</module>
 		<module>cas-client2</module>
-
 	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
 		<compiler.plugin.version>3.2</compiler.plugin.version>
 		<lombok.version>1.18.0</lombok.version>
 		<lombok.plugin.version>1.16.22.0</lombok.plugin.version>
 
-		<cas.version>5.3.3</cas.version>
+		<cas.version>6.1.1</cas.version>
 
-		<spring.boot.version>2.0.3.RELEASE</spring.boot.version>
-
-		<junit.version>4.12</junit.version>
+        <spring.boot.version>2.0.6.RELEASE</spring.boot.version>
 
 		<!-- 其他插件 -->
 		<font-awesome.version>5.3.1</font-awesome.version>
@@ -102,31 +99,6 @@
 		<dependencies>
 
 			<dependency>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok</artifactId>
-				<version>${lombok.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apereo.cas</groupId>
-				<artifactId>cas-server-core</artifactId>
-				<version>${cas.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apereo.cas</groupId>
-				<artifactId>cas-server-core-web</artifactId>
-				<version>${cas.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apereo.cas</groupId>
-				<artifactId>cas-server-support-configuration-cloud-jdbc</artifactId>
-				<version>${cas.version}</version>
-			</dependency>
-
-			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>${spring.boot.version}</version>
@@ -135,10 +107,18 @@
 			</dependency>
 
 			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>${junit.version}</version>
-				<scope>test</scope>
+				<groupId>org.apereo.cas</groupId>
+				<artifactId>cas-server-support-bom</artifactId>
+				<version>${cas.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<scope>provided</scope>
 			</dependency>
 
 
@@ -198,5 +178,37 @@
 
 		</dependencies>
 	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>nexus-aliyun</id>
+			<name>Nexus aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>sonatype-releases</id>
+			<url>http://oss.sonatype.org/content/repositories/releases/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>sonatype-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>shibboleth-releases</id>
+			<url>https://build.shibboleth.net/nexus/content/repositories/releases</url>
+		</repository>
+	</repositories>
 
 </project>

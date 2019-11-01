@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.hnds.client.config.CustomClientConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.learn.client.config.CustomClientConfiguration

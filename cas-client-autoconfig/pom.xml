@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 
 	<parent>
-		<groupId>com.hnds.cas</groupId>
+		<groupId>com.learn.cas</groupId>
 		<artifactId>cas</artifactId>
 		<version>0.1</version>
 		<relativePath>../pom.xml</relativePath>
@@ -27,7 +27,7 @@
 		<dependency>
 			<groupId>net.unicon.cas</groupId>
 			<artifactId>cas-client-autoconfig-support</artifactId>
-			<version>1.7.0-GA</version>
+			<version>2.3.0-GA</version>
 		</dependency>
 
 		<dependency>
