@@ -10,9 +10,6 @@
 
 	<modules>
 		<module>cas-service</module>
-
-        <module>cas-client-autoconfig</module>
-
 		<module>cas-client1</module>
 		<module>cas-client2</module>
 	</modules>
@@ -120,8 +117,6 @@
 				<version>${lombok.version}</version>
 				<scope>provided</scope>
 			</dependency>
-
-
 
 			<!-- 其他插件 -->
 			<dependency>

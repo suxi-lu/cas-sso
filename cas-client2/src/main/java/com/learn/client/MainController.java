@@ -1,7 +1,7 @@
 package com.learn.client;
 
-import com.learn.client.session.GlobalSessionManager;
-import com.learn.client.utils.SpringWebUtils;
+//import com.learn.client.session.GlobalSessionManager;
+//import com.learn.client.utils.SpringWebUtils;
 import org.jasig.cas.client.authentication.AttributePrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 class MainController {
 
-    @Autowired
-    private GlobalSessionManager globalSessionManager;
+//    @Autowired
+//    private GlobalSessionManager globalSessionManager;
 
     @Value("${casLogoutUrl}")
     private String casLogoutUrl;
@@ -49,8 +49,9 @@ class MainController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("index");
 
-        globalSessionManager.destroySession(SpringWebUtils.getSession());
+//        globalSessionManager.destroySession(SpringWebUtils.getSession());
 
+        System.out.println("logout");
         if (!StringUtils.isEmpty(service)) {
             mav.setViewName("redirect:" + service);
         }

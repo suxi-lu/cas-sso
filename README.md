@@ -6,6 +6,6 @@ windows: C:\Windows\System32\drivers\etc\hosts
 centos: /etc/hosts  
 <pre><code>
 127.0.0.1 cas.example.org
-127.0.0.1 cas.app.org
-127.0.0.1 cas.client.org
+127.0.0.1 cas.client1.org
+127.0.0.1 cas.client2.org
 </code></pre>
