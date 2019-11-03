@@ -9,3 +9,5 @@ centos: /etc/hosts
 127.0.0.1 cas.client1.org
 127.0.0.1 cas.client2.org
 </code></pre>
+
+* 启动后可登录用户：learn::1234
