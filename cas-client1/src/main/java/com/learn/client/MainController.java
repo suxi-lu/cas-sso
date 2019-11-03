@@ -1,13 +1,9 @@
 package com.learn.client;
 
-//import com.learn.client.session.GlobalSessionManager;
-//import com.learn.client.utils.SpringWebUtils;
 import org.jasig.cas.client.authentication.AttributePrincipal;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -45,16 +41,9 @@ class MainController {
     }
 
     @RequestMapping(value = "/logout")
-    public ModelAndView logout(String service) {
+    public ModelAndView logout() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("index");
-
-//        globalSessionManager.destroySession(SpringWebUtils.getSession());
-
-        System.out.println("logout");
-        if (!StringUtils.isEmpty(service)) {
-            mav.setViewName("redirect:" + service);
-        }
 
         return mav;
     }

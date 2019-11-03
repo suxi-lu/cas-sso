@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 
 <head>
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>船舶海图资料智能服务系统</title>
 
-    <link href="../../static/css/cas.css" th:href="@{/css/cas.css}" rel="stylesheet" th:remove="tag" />
+    <title th:text="#{screen.logout.header}">CAS Logout</title>
+    <link href="../../static/css/cas.css" rel="stylesheet" th:remove="tag" />
 </head>
 
 <body>
 <main role="main" class="container mt-3 mb-3">
-    <div>
+    <div layout:fragment="content">
         <div class="alert alert-success">
-            <h2>登出成功</h2>
-            <p>您已经成功地退出了单点身份验证服务. 你可以重新<a href="login">登录</a>.</p>
-            <p>出于安全原因，请退出Web浏览器.</p>
+            <h2 th:utext="#{screen.logout.header}">Logout successful</h2>
+            <p th:utext="#{screen.logout.success}">You have successfully logged out of the Central Authentication
+                Service. You may <a href="login">log in</a> again.</p>
+            <p th:utext="#{screen.logout.security}">For security reasons, exit your web browser.</p>
+            <p>你可以重新<a href="login">登录</a></p>
         </div>
     </div>
 </main>

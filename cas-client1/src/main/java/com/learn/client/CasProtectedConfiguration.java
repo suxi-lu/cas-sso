@@ -28,7 +28,7 @@ public class CasProtectedConfiguration {
         final FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(singleSignOutFilter);
         filterRegistrationBean.addInitParameter("casServerUrlPrefix", casClientConfigurationProperties.getServerUrlPrefix());
-//        filterRegistrationBean.addUrlPatterns("/*");
+//        filterRegistrationBean.addUrlPatterns("/logout");
         filterRegistrationBean.setUrlPatterns(casClientConfigurationProperties.getAuthenticationUrlPatterns());
         filterRegistrationBean.setOrder(0);
         return filterRegistrationBean;
