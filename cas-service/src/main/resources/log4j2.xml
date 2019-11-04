@@ -70,6 +70,10 @@
         </CasAppender>
     </Appenders>
     <Loggers>
+        <AsyncLogger name="org.apereo.cas.services" level="debug" additivity="true" includeLocation="true">
+            <AppenderRef ref="casFile"/>
+        </AsyncLogger>
+
         <AsyncLogger name="com.couchbase" level="off" additivity="false" includeLocation="true">
             <AppenderRef ref="casConsole"/>
             <AppenderRef ref="casFile"/>

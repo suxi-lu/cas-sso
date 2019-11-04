@@ -42,98 +42,11 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-core</artifactId>
-			<version>8.5.32</version>
-		</dependency>
-
-		<!--服务注册-->
-		<!--<dependency>-->
-		<!--<groupId>org.apereo.cas</groupId>-->
-		<!--<artifactId>cas-server-support-json-service-registry</artifactId>-->
-		<!--</dependency>-->
-
-		<dependency>
 			<groupId>org.apereo.cas</groupId>
 			<artifactId>cas-server-webapp${app.server}</artifactId>
 			<type>war</type>
 			<scope>runtime</scope>
 		</dependency>
-
-		<!--<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-couchbase-authentication</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-consent-webflow</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-consent-jdbc</artifactId>
-			<version>${cas.version}</version>
-		</dependency>-->
-
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-documentation-swagger</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-core-logout-api</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-
-		<!--<dependency>-->
-			<!--<groupId>org.apereo.cas</groupId>-->
-			<!--<artifactId>cas-server-support-pm-rest</artifactId>-->
-			<!--<version>${cas.version}</version>-->
-		<!--</dependency>-->
-
-		<!-- Redis Service Registry -->
-		<!--<dependency>-->
-			<!--<groupId>org.apereo.cas</groupId>-->
-			<!--<artifactId>cas-server-support-redis-service-registry</artifactId>-->
-			<!--<version>${cas.version}</version>-->
-		<!--</dependency>-->
-
-		<!--<dependency>-->
-			<!--<groupId>org.apereo.cas</groupId>-->
-			<!--<artifactId>cas-server-support-json-service-registry</artifactId>-->
-			<!--<version>${cas.version}</version>-->
-		<!--</dependency>-->
-
-		<dependency>
-			<groupId>org.apereo.cas</groupId>
-			<artifactId>cas-server-support-rest</artifactId>
-			<version>${cas.version}</version>
-		</dependency>
-
-		<!-- Redis Ticket Registry -->
-		<!--<dependency>-->
-			<!--<groupId>org.apereo.cas</groupId>-->
-			<!--<artifactId>cas-server-support-redis-ticket-registry</artifactId>-->
-			<!--<version>${cas.version}</version>-->
-		<!--</dependency>-->
-
-		<!--<dependency>-->
-			<!--<groupId>org.apereo.cas</groupId>-->
-			<!--<artifactId>cas-server-support-token-tickets</artifactId>-->
-			<!--<version>${cas.version}</version>-->
-		<!--</dependency>-->
-
-		<!-- Password Management -->
-		<!--<dependency>-->
-			<!--<groupId>org.apereo.cas</groupId>-->
-			<!--<artifactId>cas-server-support-pm-jdbc</artifactId>-->
-			<!--<version>${cas.version}</version>-->
-		<!--</dependency>-->
 
 		<!-- Database Authentication -->
 		<dependency>
@@ -145,12 +58,6 @@
 			<artifactId>cas-server-support-jdbc</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0.3</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -158,12 +65,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!--<version>2.0.4.RELEASE</version>-->
 				<version>${springboot.version}</version>
-				<!--<configuration>-->
-				<!--<mainClass>org.springframework.boot.loader.WarLauncher</mainClass>-->
-				<!--<addResources>true</addResources>-->
-				<!--</configuration>-->
 				<configuration>
 					<mainClass>${mainClassName}</mainClass>
 					<addResources>true</addResources>
@@ -217,6 +119,11 @@
 	</build>
 
 	<repositories>
+		<repository>
+			<id>nexus-aliyun</id>
+			<name>Nexus aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		</repository>
 		<repository>
 			<id>sonatype-releases</id>
 			<url>http://oss.sonatype.org/content/repositories/releases/</url>

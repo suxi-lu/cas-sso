@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
 
 <head>
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>登陆成功</title>
 
+    <title th:text="#{screen.success.header}">Generic Success View</title>
+    <link href="../../static/css/cas.css" rel="stylesheet" th:remove="tag" />
 </head>
 
 <body>
@@ -18,10 +18,18 @@
                 logged into the Central Authentication Service. However, you are seeing this page because CAS does not
                 know about your target destination and how to get you there. Examine the authentication request again
                 and make sure a target service/application that is authorized and registered with CAS is specified.</p>
-            <p th:utext="#{screen.success.security}">When you are finished, for security reasons, please <a href="logout">log out</a> and exit your web browser.</p>
+            <p th:utext="#{screen.success.security}">When you are finished, for security reasons, please <a
+                    href="logout">log out</a> and exit your web browser.</p>
+        </div>
+
+        <div id="notices" class="col-md mt-3 mt-md-0">
+            <div th:replace="fragments/cas-resources-list :: cas-resource-list">
+                <a href="fragments/cas-resources-list.html">cas-resource</a> list fragment
+            </div>
         </div>
 
     </div>
+
 
 </main>
 </body>

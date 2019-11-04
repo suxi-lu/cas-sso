@@ -5,7 +5,7 @@ cas:
   client-host-url: http://cas.client1.org:11001
 
   #Optional properties
-  authentication-url-patterns: [/protected, /protected2]
+  authentication-url-patterns: [/protected, /protected2, /logout]
   validation-url-patterns: [/protected, /protected2]
   #request-wrapper-url-patterns: [/protected, /protected2]
   #assertion-thread-local-url-patterns: [/*]
