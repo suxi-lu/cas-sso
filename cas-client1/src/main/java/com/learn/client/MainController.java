@@ -6,16 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
 class MainController {
-
-//    @Autowired
-//    private GlobalSessionManager globalSessionManager;
 
     @Value("${casLogoutUrl}")
     private String casLogoutUrl;
@@ -38,14 +34,6 @@ class MainController {
         AttributePrincipal principal = (AttributePrincipal) request.getUserPrincipal();
         model.addAttribute("principal", principal);
         return "protected";
-    }
-
-    @RequestMapping(value = "/logout")
-    public ModelAndView logout() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("index");
-
-        return mav;
     }
 
 }

@@ -25,9 +25,9 @@
 		<lombok.version>1.18.0</lombok.version>
 		<lombok.plugin.version>1.16.22.0</lombok.plugin.version>
 
-		<cas.version>6.1.1</cas.version>
+		<cas.version>6.1.4</cas.version>
 
-        <spring.boot.version>1.5.18.RELEASE</spring.boot.version>
+        <spring.boot.version>2.2.4.RELEASE</spring.boot.version>
 
 		<!-- 其他插件 -->
 		<font-awesome.version>5.3.1</font-awesome.version>
