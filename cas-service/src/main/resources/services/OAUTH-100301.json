@@ -1,0 +1,16 @@
+{
+  "@class" : "org.apereo.cas.support.oauth.services.OAuthRegisteredService",
+  "clientId": "clientid",
+  "clientSecret": "clientSecret",
+  "serviceId" : "^(https|imaps|http)://cas.client1.org:18091.*",
+  "name" : "OAUTH1",
+  "generateRefreshToken": true,
+  "jwtAccessToken": true,
+  "id" : 100301,
+  "description" : "Oauth登陆系统1",
+  "evaluationOrder" : 100301,
+  "attributeReleasePolicy" : {
+    "@class" : "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
+    "allowedAttributes" : [ "java.util.ArrayList", [ "emp_num", "username", "ldap_name", "ldap_uid", "nick_name", "emp_dept", "emp_position", "email", "mobile", "create_time", "creator", "update_time", "update_by", "parentposition", "emp_password", "emp_type", "parent_position", "address", "company_num", "dates_employed", "departure_time", "emp_en_name", "former_name", "gender", "identity_card", "job_number", "name_pinyin", "nation", "state", "telephone", "update_type", "emp_manager", "phonenumber", "password", "registrationid", "audit_status", "company_name", "department_code", "user_type", "usersource", "emp_position_descr", "emp_position_name", "expansion_attr", "tenent_id", "mobile_user_type", "is_mobile_user" ] ]
+  }
+}
